@@ -524,6 +524,19 @@
     </dependencyManagement>
 
     <repositories>
+        
+        <repository>
+            <id>nexus</id>
+            <name>local private nexus</name>
+            <url>http://maven.oschina.net/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        
         <repository>
             <id>codehaus</id>
             <url>http://repository.codehaus.org</url>
@@ -534,6 +547,7 @@
             <!--<name>Official Gosu website (releases)</name>-->
             <!--<url>http://gosu-lang.org/repositories/m2/releases</url>-->
         <!--</repository>-->
+
     </repositories>
 
     <!--
@@ -541,10 +555,24 @@
      Any items that we use in a plugin's <dependency> phase can be resolved from here, as well as central
     -->
     <pluginRepositories>
+    
+        <pluginRepository>
+            <id>nexus</id>
+            <name>local private nexus</name>
+            <url>http://maven.oschina.net/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+        
         <pluginRepository>
             <id>sonatype.org</id>
             <url>https://oss.sonatype.org/content/repositories/releases</url>
         </pluginRepository>
+
     </pluginRepositories>
 
     <modules>
